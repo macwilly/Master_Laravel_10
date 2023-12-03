@@ -88,6 +88,9 @@ Route::get('/', function () use ($tasks) {
     ]);
 })->name('tasks.index');
 
+Route::get('/{id}', function ($id){
+    return 'One single task';
+})->name('tasks.show');
 
 //Route::get('/hello', function (){
 //   return  "<h1>Hello</h1>";
