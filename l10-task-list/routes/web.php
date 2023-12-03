@@ -86,7 +86,7 @@ Route::get('/', function () use ($tasks) {
     return view('index', [
          "tasks"=>$tasks
     ]);
-});
+})->name('tasks.index');
 
 
 //Route::get('/hello', function (){
