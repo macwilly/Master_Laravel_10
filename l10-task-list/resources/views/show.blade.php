@@ -1,11 +1,14 @@
 @extends('layouts.app')
 
-<h1>{{ $task->title }}</h1>
-<p>{{ $task->description }}</p>
+@section('title', $task->title)
 
-@if($task->long_description)
-    <p>{{ $task->long_description }}</p>
-@endif
+@section('content')
+    <p>{{ $task->description }}</p>
 
-<p>{{ $task->created_at }}</p>
-<p>{{ $task->updated_at }}</p>
+    @if($task->long_description)
+        <p>{{ $task->long_description }}</p>
+    @endif
+
+    <p>{{ $task->created_at }}</p>
+    <p>{{ $task->updated_at }}</p>
+@endsection
