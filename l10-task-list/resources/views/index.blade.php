@@ -3,11 +3,11 @@
 </h1>
 
 <div>
-    @if(count($tasks))
-        @foreach($tasks as $task)
+
+        @forelse($tasks as $task)
           <div>{{$task->title}}</div>
-        @endforeach
-    @else
-        <div>There are no tasks</div>
-    @endif
+        @empty
+            <div>There are no tasks</div>
+       @endforelse
+
 </div>
