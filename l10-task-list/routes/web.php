@@ -99,6 +99,7 @@ Route::get('/tasks/{id}', function ($id) use ($tasks){
     if(!$task) {
         abort(Response::HTTP_NOT_FOUND);
     }
+    return view('show', ['show'=>$task]);
 })->name('tasks.show');
 
 //Route::get('/hello', function (){
