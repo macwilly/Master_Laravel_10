@@ -88,21 +88,22 @@ Route::get('/', function () use ($tasks) {
     ]);
 });
 
-Route::get('/hello', function (){
-   return  "<h1>Hello</h1>";
-})->name('hello');
 
-Route::get('/greet/{name}', function ($name){
-    return "Hello $name!";
-});
-
-Route::get('/hallo', function () {
-    return  redirect()->route('hello');
-});
-
-Route::get('welcome', function() {
-    return view('welcome');
-});
+//Route::get('/hello', function (){
+//   return  "<h1>Hello</h1>";
+//})->name('hello');
+//
+//Route::get('/greet/{name}', function ($name){
+//    return "Hello $name!";
+//});
+//
+//Route::get('/hallo', function () {
+//    return  redirect()->route('hello');
+//});
+//
+//Route::get('welcome', function() {
+//    return view('welcome');
+//});
 
 Route::fallback(function (){
     return "Still got somewhere!";
