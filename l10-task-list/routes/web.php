@@ -82,9 +82,9 @@ $tasks = [
 
 
 //Dynamically taking the name from the URL argument
-Route::get('/{name}', function ($name) {
+Route::get('/', function () use ($tasks) {
     return view('index', [
-         "name"=>$name
+         "tasks"=>$tasks
     ]);
 });
 
