@@ -73,3 +73,5 @@ The Laravel framework is open-sourced software licensed under the [MIT license](
 
 The sections was more about using Laravel to create a new Database from the .env 
 To do this we stopped the server that was running then ran the `php artisan migrate` command
+Upon running the command in the Docker instance of MySQL the new database was created with with the name from .env 
+Also some default Laravel tables were created. 
