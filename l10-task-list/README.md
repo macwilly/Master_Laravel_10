@@ -64,3 +64,14 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+
+---
+
+# Course Notes
+
+### Connecting_to_Database_From_Laravel
+
+The sections was more about using Laravel to create a new Database from the .env 
+To do this we stopped the server that was running then ran the `php artisan migrate` command
+Upon running the command in the Docker instance of MySQL the new database was created with with the name from .env 
+Also some default Laravel tables were created. 
