@@ -90,3 +90,11 @@ This uses all objects to create the comlumns. `id()` and `timestamp()` are built
 The `down()` function is used to rollback the changes.  
 To run the mirgration you use `php artisan migrate`  
 To rollback you will use `php artisan migrate:rollback`  
+
+
+### Model_Factory_and_Seeder
+
+**Factory** is used to generate fake data.  
+**Seeder** is used to add the fake data to the database.  
+Both can be found in the database directory. 
+You can use the command `php artisan make:factory [FactoryName]` to create a new factory. You can also generate with factories as well.   
