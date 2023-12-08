@@ -74,4 +74,19 @@ The Laravel framework is open-sourced software licensed under the [MIT license](
 The sections was more about using Laravel to create a new Database from the .env 
 To do this we stopped the server that was running then ran the `php artisan migrate` command
 Upon running the command in the Docker instance of MySQL the new database was created with with the name from .env 
-Also some default Laravel tables were created. 
+Also some default Laravel tables were created.
+
+### Models_and_Migrations
+
+Every database table has a model which is found in app/Models/  
+Model names should be singular so you want to name it Task and not Tasks. This is because
+Laravel infures from the model name that a database table will be created and that will use the plural.  
+To create a new one we use the command `php artisan make:model Task -m` 
+this will create a new model called Task and the -m flage will create the migration file.  
+The migration files are located in database/migrations/  
+Migrates are used as a version controll of the database through php (Laravel)  
+When you create a new migration you add all the information to the `up()` function this is for upgrding the database.
+This uses all objects to create the comlumns. `id()` and `timestamp()` are built in types.  
+The `down()` function is used to rollback the changes.  
+To run the mirgration you use `php artisan migrate`  
+To rollback you will use `php artisan migrate:rollback`  
