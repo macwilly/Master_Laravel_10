@@ -34,7 +34,7 @@ Route::get('/', function (){
 //Dynamically taking the name from the URL argument
 Route::get('/tasks', function ()  {
     return view('index', [
-         "tasks"=>$tasks
+         "tasks"=> \App\Models\Task::all()
     ]);
 })->name('tasks.index');
 
