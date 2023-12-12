@@ -115,3 +115,6 @@ You can call multiple query builder methods to add on Query modifiers.
 - [Building Queries](https://laravel.com/docs/10.x/queries).  
 From the command line use `php atrisan tinker` to interact with the database models without needed to render in web page.  Use the same commands as in the web application. Good way to look at data before using the web page.  
 **Example** `\App\Models\Task::where('completed', false)->get()->count();`
+
+
+### Forms_and_CSRF_Protection
