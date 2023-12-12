@@ -106,3 +106,12 @@ Seeding is typically done as the inital set up of a Laravel Application.
 To have Laravel create a new Factory run the command `php artisan make:factory [ModelNameFactory] --model=[ModelName]`  
 The example from the lesson is `php artisan make:factory TaskFactory --model=Task`  
 `php artisan migration:refresh --seed` this will run all of the migrations from the top. It will **COMPLETELY RECREATE THE DATABASE**. After recreating the tables it Laravel will then use the seeder to populate them.  
+
+
+### Model_and_Reading_Data
+
+`latest()->get()` Latest creates a query build just like the one that I created for work. It will make the specific SQL query. get() will exicute the query and return the results.  
+You can call multiple query builder methods to add on Query modifiers.   
+- [Building Queries](https://laravel.com/docs/10.x/queries).  
+From the command line use `php atrisan tinker` to interact with the database models without needed to render in web page.  Use the same commands as in the web application. Good way to look at data before using the web page.  
+**Example** `\App\Models\Task::where('completed', false)->get()->count();`
