@@ -92,14 +92,8 @@ Route::get('/tasks', function () use ($tasks) {
     ]);
 })->name('tasks.index');
 
-Route::get('/tasks/{id}', function ($id) use ($tasks){
-    //collect turns the php Array into a collection object
-    $task = collect($tasks)->firstWhere('id', $id);
-
-    if(!$task) {
-        abort(Response::HTTP_NOT_FOUND);
-    }
-    return view('show', ['task'=>$task]);
+Route::get('/tasks/{id}', function ($id) {
+    return view('show', ['task'=>\App\Models\Task::find($id)]);
 })->name('tasks.show');
 
 //Route::get('/hello', function (){
