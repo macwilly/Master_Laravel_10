@@ -98,3 +98,11 @@ To rollback you will use `php artisan migrate:rollback`
 **Seeder** is used to add the fake data to the database.  
 Both can be found in the database directory. 
 You can use the command `php artisan make:factory [FactoryName]` to create a new factory. You can also generate with factories as well.   
+To have a Factory for your model the /Models/[Model].php must have `use HasFactory;` this is automatically added when the Model is created with Laravel.
+To be able to seed your database you will use the command `php artisan db:seed` this will look at the 
+seeders and make the appropriate calls to create factory data and insert it into the database.  
+The `db:seed` will always add new data it is not refreshing it.  
+Seeding is typically done as the inital set up of a Laravel Application.  
+To have Laravel create a new Factory run the command `php artisan make:factory [ModelNameFactory] --model=[ModelName]`  
+The example from the lesson is `php artisan make:factory TaskFactory --model=Task`  
+`php artisan migration:refresh --seed` this will run all of the migrations from the top. It will **COMPLETELY RECREATE THE DATABASE**. After recreating the tables it Laravel will then use the seeder to populate them.  
