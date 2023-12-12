@@ -34,7 +34,7 @@ Route::get('/', function (){
 //Dynamically taking the name from the URL argument
 Route::get('/tasks', function ()  {
     return view('index', [
-         "tasks"=> \App\Models\Task::latest()->get()
+         "tasks"=> \App\Models\Task::latest()->where('completed',true)->get()
     ]);
 })->name('tasks.index');
 
