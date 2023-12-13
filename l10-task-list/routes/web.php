@@ -47,6 +47,9 @@ Route::get('/tasks/{id}', function ($id) {
     ]);
 })->name('tasks.show');
 
+
+Route::post('/tasks');
+
 //Route::get('/hello', function (){
 //   return  "<h1>Hello</h1>";
 //})->name('hello');
