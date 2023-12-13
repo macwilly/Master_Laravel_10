@@ -48,7 +48,9 @@ Route::get('/tasks/{id}', function ($id) {
 })->name('tasks.show');
 
 
-Route::post('/tasks');
+Route::post('/tasks', function(){
+    dd("We have reached the store route");
+})->name('tasks.store');
 
 //Route::get('/hello', function (){
 //   return  "<h1>Hello</h1>";
