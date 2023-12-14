@@ -17,6 +17,7 @@
 @section('content')
     <form method="POST" action="{{ route('tasks.store') }}">
         @csrf
+        @method('PUT')
         <div>
             <label for="title">
                 Title
