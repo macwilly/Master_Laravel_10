@@ -50,7 +50,11 @@ Route::get('/tasks/{id}', function ($id) {
 
 
 Route::post('/tasks', function(Request $request){
-    dd($request->all());
+    $data = $request->validate([
+        'title'            => 'required|max:255',
+        'description'      => 'required',
+        'long_description' => 'required'
+    ]);
 })->name('tasks.store');
 
 //Route::get('/hello', function (){
