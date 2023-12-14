@@ -59,7 +59,8 @@ Route::post('/tasks', function(Request $request){
     $task->title = $data['title'];
     $task->description = $data['description'];
     $task->long_description = $data['long_description'];
-    
+
+    $task->save();
 })->name('tasks.store');
 
 //Route::get('/hello', function (){
