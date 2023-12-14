@@ -3,6 +3,9 @@
 @section('title', "The list of tasks")
 
 @section('content')
+    <div>
+        <a href="{{ route('tasks.create') }}">To the create form!</a>
+    </div>
     @forelse($tasks as $task)
         <div>
             {{-- passing in the route function with the name of the route, as well as blade array with the id--}}
