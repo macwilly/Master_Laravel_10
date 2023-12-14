@@ -123,4 +123,16 @@ The order that the routes are defined matter.
 Routes that accept a parameter are known as greedy and should be placed lower in the defined routes to all other set routes to be caught.  
 To see all the routes in a project use `php artisan route:list`  
 When ou use a different route method the path can be the same. 
-`@csrf` directive - (cross site request forgery) this directive helps to protect again csrf attacks.
+`@csrf` directive - (cross site request forgery) this directive helps to protect again csrf attacks. Creates a unique token that laravel will check. If you do not include `@csrf` forms system will throw a 419 error.  
+
+
+### Validating_and_Storing_Data
+
+`$data = $request->validate([
+        'title'            => 'required|max:255',
+        'description'      => 'required',
+        'long_description' => 'required'
+    ]);` This is creating a new variable data that has all of the information from the form request. To validate it we create a key value array with the form input names with the validation rules. If a form field has more than one 
+    rule then a | is used to separate it.  
+If the form does not validate Laravel will set a $_SESSION variable call errors and return the user to previous page so that the errors can be displayed next to fields.  
+
