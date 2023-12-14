@@ -72,6 +72,24 @@ Route::post('/tasks', function(Request $request){
         ->with('success', 'Task created successfully!');
 })->name('tasks.store');
 
+Route::put('/tasks/{id}', function($id, Request $request){
+    $data = $request->validate([
+        'title'            => 'required|max:255',
+        'description'      => 'required',
+        'long_description' => 'required'
+    ]);
+
+    $task = Task::findOrFail($id);
+    $task->title = $data['title'];
+    $task->description = $data['description'];
+    $task->long_description = $data['long_description'];
+
+    $task->save();
+
+    return redirect()->route('tasks.show', ['id'=>$task->id])
+        ->with('success', 'Task updated successfully!');
+})->name('tasks.update');
+
 //Route::get('/hello', function (){
 //   return  "<h1>Hello</h1>";
 //})->name('hello');
