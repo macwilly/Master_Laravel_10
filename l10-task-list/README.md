@@ -142,4 +142,11 @@ If the form does not validate Laravel will set a $_SESSION variable call errors 
 ### Sessions_Errors_and_Flas_Messages
 
 By default session information is stored in /storage/framework/sessions  
-The session behavior can be changed in config/session.php
+The session behavior can be changed in config/session.php  
+
+
+### Edit_Form
+
+`method('PUT')` this directive adds another data field to be sent with the form which is _method=put this is a form of method spoofing.
+Internally Laravel will see the POST method from the form as well as the PUT method and will know to redirect to a route with a PUT method (`Route::put`)  
+When running the put method we can still use the save() method on the model, because Laravel knows to do an update on an existing database field.  
