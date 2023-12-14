@@ -35,7 +35,7 @@ Route::get('/', function (){
 //Dynamically taking the name from the URL argument
 Route::get('/tasks', function ()  {
     return view('index', [
-         "tasks"=> \App\Models\Task::latest()->get()
+         "tasks"=> Task::latest()->get()
     ]);
 })->name('tasks.index');
 
@@ -44,10 +44,9 @@ Route::view('/tasks/create', 'create')
 
 Route::get('/tasks/{id}', function ($id) {
     return view('show', [
-        'task'=>\App\Models\Task::findOrFail($id)
+        'task'=>Task::findOrFail($id)
     ]);
 })->name('tasks.show');
-
 
 Route::post('/tasks', function(Request $request){
     $data = $request->validate([
@@ -55,6 +54,8 @@ Route::post('/tasks', function(Request $request){
         'description'      => 'required',
         'long_description' => 'required'
     ]);
+
+    $task = new Task;
 })->name('tasks.store');
 
 //Route::get('/hello', function (){
