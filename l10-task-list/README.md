@@ -118,3 +118,9 @@ From the command line use `php atrisan tinker` to interact with the database mod
 
 
 ### Forms_and_CSRF_Protection
+
+The order that the routes are defined matter.  
+Routes that accept a parameter are known as greedy and should be placed lower in the defined routes to all other set routes to be caught.  
+To see all the routes in a project use `php artisan route:list`  
+When ou use a different route method the path can be the same. 
+`@csrf` directive - (cross site request forgery) this directive helps to protect again csrf attacks.
