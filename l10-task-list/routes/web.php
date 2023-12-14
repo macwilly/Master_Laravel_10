@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Http\Response;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -48,8 +49,8 @@ Route::get('/tasks/{id}', function ($id) {
 })->name('tasks.show');
 
 
-Route::post('/tasks', function(){
-    dd("We have reached the store route");
+Route::post('/tasks', function(Request $request){
+    dd($request->all());
 })->name('tasks.store');
 
 //Route::get('/hello', function (){
