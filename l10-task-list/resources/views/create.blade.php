@@ -3,5 +3,5 @@
 @section('title', "Add Task")
 
 @section('content')
-    <form method="POST" action=""></form>
+    <form method="POST" action="{{ route('tasks.store') }}">
 @endsection
