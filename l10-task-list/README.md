@@ -135,4 +135,11 @@ When ou use a different route method the path can be the same.
     ]);` This is creating a new variable data that has all of the information from the form request. To validate it we create a key value array with the form input names with the validation rules. If a form field has more than one 
     rule then a | is used to separate it.  
 If the form does not validate Laravel will set a $_SESSION variable call errors and return the user to previous page so that the errors can be displayed next to fields.  
+`$[model]->save()` this is a prebuild function for Laravel models. It know if you create a new model class to do an insert and if it is an exisitig model to do an update.  
 
+
+
+### Sessions_Errors_and_Flas_Messages
+
+By default session information is stored in /storage/framework/sessions  
+The session behavior can be changed in config/session.php
