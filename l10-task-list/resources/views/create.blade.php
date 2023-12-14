@@ -4,4 +4,5 @@
 
 @section('content')
     <form method="POST" action="{{ route('tasks.store') }}">
+        @csrf
 @endsection
