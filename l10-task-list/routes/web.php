@@ -56,15 +56,8 @@ Route::get('/tasks/{task}', function (Task $task) {
 })->name('tasks.show');
 
 Route::post('/tasks', function(TaskRequest $request){
-    // From the new TaskRequest class this will get all the data that is valid
+    // From the new TaskRequest class validated() will get all the data that is valid
     // if the data is not valid it will act as it did before.
-//    $data = $request->validated();
-//    $task = new Task;
-//    $task->title = $data['title'];
-//    $task->description = $data['description'];
-//    $task->long_description = $data['long_description'];
-//    $task->save();
-
     $task = Task::create($request->validated());
 
     return redirect()->route('tasks.show', ['task'=>$task->id])
@@ -72,33 +65,12 @@ Route::post('/tasks', function(TaskRequest $request){
 })->name('tasks.store');
 
 Route::put('/tasks/{task}', function(Task $task, TaskRequest $request){
-//    $data = $request->validated();
-//    $task->title = $data['title'];
-//    $task->description = $data['description'];
-//    $task->long_description = $data['long_description'];
-//    $task->save();
 
-       $task->update($request->validated());
+    $task->update($request->validated());
 
     return redirect()->route('tasks.show', ['task'=>$task->id])
         ->with('success', 'Task updated successfully!');
 })->name('tasks.update');
-
-//Route::get('/hello', function (){
-//   return  "<h1>Hello</h1>";
-//})->name('hello');
-//
-//Route::get('/greet/{name}', function ($name){
-//    return "Hello $name!";
-//});
-//
-//Route::get('/hallo', function () {
-//    return  redirect()->route('hello');
-//});
-//
-//Route::get('welcome', function() {
-//    return view('welcome');
-//});
 
 Route::fallback(function (){
     return "Still got somewhere!";
