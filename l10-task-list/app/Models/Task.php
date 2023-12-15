@@ -10,8 +10,4 @@ class Task extends Model
     // This is auto generated when Laravel is used to create the model
     use HasFactory;
 
-    public function getRouteKeyName()
-    {
-        return 'slug';
-    }
 }
