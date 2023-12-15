@@ -72,12 +72,13 @@ Route::post('/tasks', function(TaskRequest $request){
 })->name('tasks.store');
 
 Route::put('/tasks/{task}', function(Task $task, TaskRequest $request){
-    $data = $request->validated();
-    $task->title = $data['title'];
-    $task->description = $data['description'];
-    $task->long_description = $data['long_description'];
+//    $data = $request->validated();
+//    $task->title = $data['title'];
+//    $task->description = $data['description'];
+//    $task->long_description = $data['long_description'];
+//    $task->save();
 
-    $task->save();
+       $task->update($request->validated());
 
     return redirect()->route('tasks.show', ['id'=>$task->id])
         ->with('success', 'Task updated successfully!');
