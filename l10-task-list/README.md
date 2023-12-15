@@ -157,3 +157,25 @@ When running the put method we can still use the save() method on the model, bec
 This is a UI friendly tip for when validating forms.  
 the `old('[inputName]')` will save the previously used information from the field if there was an error with submition.  
 Will only work with forms that are using POST.  
+
+
+### Reusability_Route_Model_Binding_Form_Requests_Mass_Assignment
+
+Route Model Binding: Feature in Laravel where Laravel will automatically resolve a model instance based on type of Model that is passed.
+This means in the parameters you pass Object objectName. Laravel will automatically fetch the Model from the database, and if not will
+throw a not found (404). This can replace our Model::findOrFail() . The task that is passed in the Route path is assumed by Laravel to be
+the primary key. This can be configured in the Model class page app/Models/ by implimenting the method `public function getRouteKeyName(){}`  
+`php artisan make:request [name]` this is used to create a form request which can be used to group validation together for re-useability. If
+you have different validations for create/update you can create a form request for both.  
+To get the validated data from the new Request class.  
+- Import the new class at the top of `web.app` `use App\Http\Requests\[requestName];`
+- Where before a generic `Request` was used change to be new request class
+- change your `$data` to be `$data = $request->validated()` this will use the validated information from the Request Class. If it 
+does not validate, the errors will be returned as before. `validated()` returns a key value array.  
+`Model::create()` this static method of all models is used to mass assign the values of the model. This method takes a key value array to set all of 
+the Model.  
+`$model->update()` this static method of all models is used to mass assign the values of the model. This method takes a key value array to set all of 
+the Model and will update it.  
+By default these two above mass assignments are not enabled. This is to prevent users from updating fields that they shouldn't update. To enable this 
+add `protected $fillable = ['columnName1', 'columnName3']` to the desired Model. More secure because each field is specifically called out.  
+`protected $guarded = ['columnName2', 'columnName4']` is the opposite of `$fillable` it allows you to chose which fields are not fillable and the rest will be allowed.
