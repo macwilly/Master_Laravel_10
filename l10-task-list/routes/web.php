@@ -42,9 +42,9 @@ Route::get('/tasks', function ()  {
 Route::view('/tasks/create', 'create')
 ->name('tasks.create');
 
-Route::get('/tasks/{id}/edit', function ($id) {
+Route::get('/tasks/{task}/edit', function (Task $task) {
     return view('edit', [
-        'task'=>Task::findOrFail($id)
+        'task'=> $task
     ]);
 })->name('tasks.edit');
 
