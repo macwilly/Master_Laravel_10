@@ -56,12 +56,9 @@ Route::get('/tasks/{task}', function (Task $task) {
 })->name('tasks.show');
 
 Route::post('/tasks', function(TaskRequest $request){
-    $data = $request->validate([
-        'title'            => 'required|max:255',
-        'description'      => 'required',
-        'long_description' => 'required'
-    ]);
-
+    // From the new TaskRequest class this will get all the data that is valid
+    // if the data is not valid it will act as it did before.
+    $data = $request->validated();
     $task = new Task;
     $task->title = $data['title'];
     $task->description = $data['description'];
@@ -74,12 +71,7 @@ Route::post('/tasks', function(TaskRequest $request){
 })->name('tasks.store');
 
 Route::put('/tasks/{task}', function(Task $task, TaskRequest $request){
-    $data = $request->validate([
-        'title'            => 'required|max:255',
-        'description'      => 'required',
-        'long_description' => 'required'
-    ]);
-
+    $data = $request->validated();
     $task->title = $data['title'];
     $task->description = $data['description'];
     $task->long_description = $data['long_description'];
