@@ -55,7 +55,7 @@ Route::get('/tasks/{task}', function (Task $task) {
     ]);
 })->name('tasks.show');
 
-Route::post('/tasks', function(Request $request){
+Route::post('/tasks', function(TaskRequest $request){
     $data = $request->validate([
         'title'            => 'required|max:255',
         'description'      => 'required',
@@ -73,7 +73,7 @@ Route::post('/tasks', function(Request $request){
         ->with('success', 'Task created successfully!');
 })->name('tasks.store');
 
-Route::put('/tasks/{task}', function(Task $task, Request $request){
+Route::put('/tasks/{task}', function(Task $task, TaskRequest $request){
     $data = $request->validate([
         'title'            => 'required|max:255',
         'description'      => 'required',
