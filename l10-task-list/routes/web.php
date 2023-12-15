@@ -58,13 +58,14 @@ Route::get('/tasks/{task}', function (Task $task) {
 Route::post('/tasks', function(TaskRequest $request){
     // From the new TaskRequest class this will get all the data that is valid
     // if the data is not valid it will act as it did before.
-    $data = $request->validated();
-    $task = new Task;
-    $task->title = $data['title'];
-    $task->description = $data['description'];
-    $task->long_description = $data['long_description'];
+//    $data = $request->validated();
+//    $task = new Task;
+//    $task->title = $data['title'];
+//    $task->description = $data['description'];
+//    $task->long_description = $data['long_description'];
+//    $task->save();
 
-    $task->save();
+    $task = Task::create($request->validated());
 
     return redirect()->route('tasks.show', ['id'=>$task->id])
         ->with('success', 'Task created successfully!');
