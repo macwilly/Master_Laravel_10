@@ -50,7 +50,13 @@
             @enderror
         </div>
         <div>
-            <button type="submit">Add Task</button>
+            <button type="submit">
+                @isset($task)
+                    Update Task
+                @else
+                    Add Task
+                @endisset
+            </button>
         </div>
 
     </form>
