@@ -187,4 +187,9 @@ add `protected $fillable = ['columnName1', 'columnName3']` to the desired Model.
 In Laravel the Routes that delete something are named common prefecix for the model and `.destroy`  
 
 
-### 
+### Reusing_Blade_Code_Subviews
+
+This was mostly just in the code.  
+Using the `??`  if the value before the `??` is not null use it else use the later.  
+`include()` directive will bring in the sub views to be used. Till you know what the form will look like, it will be a good idea to make a create and edit form. 
+Then if it makes sense refactor into a subview. There is a newer directive that will be taught later and `include()` is for more simple cases.  
