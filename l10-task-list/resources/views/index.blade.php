@@ -15,6 +15,8 @@
         <div>There are no tasks</div>
    @endforelse
     @if($tasks->count())
-        {{ $tasks->links() }}
+        <nav>
+            {{ $tasks->links() }}
+        </nav>
     @endif
 @endsection
