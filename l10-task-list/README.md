@@ -192,4 +192,4 @@ In Laravel the Routes that delete something are named common prefecix for the mo
 This was mostly just in the code.  
 Using the `??`  if the value before the `??` is not null use it else use the later.  
 `include()` directive will bring in the sub views to be used. Till you know what the form will look like, it will be a good idea to make a create and edit form. 
-Then if it makes sense refactor into a subview.  
+Then if it makes sense refactor into a subview. There is a newer directive that will be taught later and `include()` is for more simple cases.  
