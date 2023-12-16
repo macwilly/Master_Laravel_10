@@ -178,4 +178,13 @@ the Model.
 the Model and will update it.  
 By default these two above mass assignments are not enabled. This is to prevent users from updating fields that they shouldn't update. To enable this 
 add `protected $fillable = ['columnName1', 'columnName3']` to the desired Model. More secure because each field is specifically called out.  
-`protected $guarded = ['columnName2', 'columnName4']` is the opposite of `$fillable` it allows you to chose which fields are not fillable and the rest will be allowed.
+`protected $guarded = ['columnName2', 'columnName4']` is the opposite of `$fillable` it allows you to chose which fields are not fillable and the rest will be allowed.  
+
+
+### Deleting_Data
+
+`$model->delete()` built in method from Model that will delete the record from the database.  
+In Laravel the Routes that delete something are named common prefecix for the model and `.destroy`  
+
+
+### 
