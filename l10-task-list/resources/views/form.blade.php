@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', "Add Task")
+@section('title', isset($task) ? 'Edit Task' : 'Add Task')
 
 @section('styles')
     <style>
@@ -15,8 +15,11 @@
 @endsection
 
 @section('content')
-    <form method="POST" action="{{ route('tasks.store') }}">
+    <form method="POST" action="{{ isset($task) ? route('task.update', ['task' => $task->id]) : route('tasks.store') }}">
         @csrf
+        @isset($task)
+            @method('PUT')
+        @endisset
         <div>
             <label for="title">
                 Title
