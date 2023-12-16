@@ -36,7 +36,7 @@ Route::get('/', function (){
 //Dynamically taking the name from the URL argument
 Route::get('/tasks', function ()  {
     return view('index', [
-         "tasks"=> Task::latest()->paginate()
+         "tasks"=> Task::latest()->paginate(5)
     ]);
 })->name('tasks.index');
 
