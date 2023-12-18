@@ -17,6 +17,16 @@
     </div>
 
     <div>
+        <form action="{{ route('tasks.toggle-complete', ['task' => $task]) }}" method="POST">
+            @csrf
+            @method('PUT')
+            <button type="submit">
+                Mark as {{ $task->completed ? 'not completed' : 'completed' }}
+            </button>
+        </form>
+    </div>
+
+    <div>
         <form action="{{ route('tasks.destroy', ['task' => $task]) }}" method="POST">
             @csrf
             @method('DELETE')
