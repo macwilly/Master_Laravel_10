@@ -64,6 +64,13 @@ Route::post('/tasks', function(TaskRequest $request){
         ->with('success', 'Task created successfully!');
 })->name('tasks.store');
 
+Route::put('/tasks/{id}/toggle-complete', function (Task $task){
+    $task->completed = !$task->completed;
+    $task->save();
+
+    return redirect()->back()->with('success', 'Task updated successfully!');
+})->name('tasks.complete');
+
 Route::put('/tasks/{task}', function(Task $task, TaskRequest $request){
 
     $task->update($request->validated());
