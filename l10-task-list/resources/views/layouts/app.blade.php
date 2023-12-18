@@ -3,7 +3,7 @@
     <head>
         <title>Laravel 10 List App</title>
         <script src="https://cdn.tailwindcss.com"></script>
-        
+
         @yield('styles')
     </head>
     <body>
