@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html lang="">
     <head>
-    <title>Laravel 10 List App</title>
+        <title>Laravel 10 List App</title>
+        <script src="https://cdn.tailwindcss.com"></script>
+        
         @yield('styles')
     </head>
     <body>
