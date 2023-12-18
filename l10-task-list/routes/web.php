@@ -65,8 +65,8 @@ Route::post('/tasks', function(TaskRequest $request){
 })->name('tasks.store');
 
 Route::put('/tasks/{id}/toggle-complete', function (Task $task){
-    $task->completed = !$task->completed;
-    $task->save();
+    //calling method from Task Model Class
+    $task->toggleComplete();
 
     return redirect()->back()->with('success', 'Task updated successfully!');
 })->name('tasks.complete');
