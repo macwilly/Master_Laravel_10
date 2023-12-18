@@ -211,4 +211,14 @@ Explored two ways to toggle the completed field.
 When modify data it is best practice to use POST or PUT html verbs and never GET. GET should be used for data retrieval.
 
 
-### 
+### Adding_Styling_with_Tailwind_CSS 
+
+[Tailwind CSS](https://tailwindcss.com/).  
+`cdn` Contenet delivery network.  It is a distributed network of servers and deliver content to users based on geographical location. 
+It will improve performace and reduce latency.  
+`@class()` directive. 
+- This is used to add classes to an element. 
+- It requries an array of values.
+- You can have a class always applied
+- you can have a class conditionally applied with a key value. where key is the class(es) and value is the condition. Multiple classes
+are separated by ` `
