@@ -199,4 +199,4 @@ Then if it makes sense refactor into a subview. There is a newer directive that 
 
 Laravel has a built in pagination feature.
 `paginate()` built in Model method. Will call `get()` and make sure that the results are spilt correctly. 
-It will also provide links to other pages for the blades.
+It will also provide links to other pages for the blades. It also reads any query parameters what were sent to the route.
