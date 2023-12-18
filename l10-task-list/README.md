@@ -200,3 +200,15 @@ Then if it makes sense refactor into a subview. There is a newer directive that 
 Laravel has a built in pagination feature.
 `paginate()` built in Model method. Will call `get()` and make sure that the results are spilt correctly. 
 It will also provide links to other pages for the blades. It also reads any query parameters what were sent to the route.
+
+
+### Toggling_Task_State
+
+Explored two ways to toggle the completed field.  
+- The first way was only through the route and using build in Model methods.  
+- The second was by adding a method to the Model. Same method just encapsulating it better.  
+
+When modify data it is best practice to use POST or PUT html verbs and never GET. GET should be used for data retrieval.
+
+
+### 
