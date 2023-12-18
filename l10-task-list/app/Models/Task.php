@@ -19,5 +19,9 @@ class Task extends Model
      * Specifically select the non-fillable table columns all others will be fillable
      * this is useful for large tables
      */
-//    protected $guarded = [];
+
+    public function toggleComplete() {
+        $this->completed = !$this->completed;
+        $this->save();
+    }
 }
